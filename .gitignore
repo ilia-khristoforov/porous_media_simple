@@ -59,3 +59,16 @@ Darwin*
 !.gitignore
 
 # End of https://www.toptal.com/developers/gitignore/api/openfoam
+constant/polyMesh/cellZones
+constant/polyMesh/faces
+constant/polyMesh/neighbour
+constant/polyMesh/owner
+constant/polyMesh/points
+constant/polyMesh/sets/porousBlockage
+constant/polyMesh/sets/porousBlockageCellSet
+temp_mesh.vtk
+temp_mesh.unv
+temp_mesh.msh
+res.zip
+mesh.unv
+fluid.STEP
