@@ -22,7 +22,7 @@ actions
         type    cellSet;
         action  new;
         source  boxToCell;
-        box     (-0.5 -2 -1) (0.5 2 1);
+        box     (0.065 0.001 -0.332) (0.427 0.006 -0.072);
     }
 
     // Convert porousBlockage cellSet into a cellZone
