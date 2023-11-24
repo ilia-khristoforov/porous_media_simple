@@ -73,3 +73,4 @@ res.zip
 mesh.unv
 fluid.STEP
 *.unv
+fluid.geo

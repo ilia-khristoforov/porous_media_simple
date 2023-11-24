@@ -8,32 +8,31 @@
 FoamFile
 {
     format      ascii;
-    class       polyBoundaryMesh;
-    location    "constant/polyMesh";
-    object      boundary;
+    class       dictionary;
+    object      decomposeParDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-3
-(
-    inlet
-    {
-        type            patch;
-        nFaces          500;
-        startFace       6713531;
-    }
-    outlet
-    {
-        type            patch;
-        nFaces          500;
-        startFace       6714031;
-    }
-    wall
-    {
-        type            wall;
-        nFaces          566762;
-        startFace       6714531;
-    }
-)
+numberOfSubdomains  8;
+
+/*
+    Main methods are:
+    1) Geometric: "simple"; "hierarchical", with ordered sorting, e.g. xyz, yxz
+    2) Scotch: "scotch", when running in serial; "ptscotch", running in parallel
+*/
+
+method              hierarchical;
+
+simpleCoeffs
+{
+    n               (4 2 1); // total must match numberOfSubdomains
+}
+
+hierarchicalCoeffs
+{
+    n               (4 2 1); // total must match numberOfSubdomains
+    order           xyz;
+}
+
 
 // ************************************************************************* //
