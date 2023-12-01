@@ -25,13 +25,12 @@ boundaryField
     inlet
     {
         type            fixedValue;
-        value           uniform (0 0 0.00023577);
+        value           uniform (0 0 0.23577);
     }
 
     outlet
     {
-        type            pressureInletOutletVelocity;
-        value           uniform (0 0 -0.00023577);
+        type            zeroGradient;
     }
 
     wall
