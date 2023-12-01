@@ -9,30 +9,14 @@ FoamFile
 {
     format      ascii;
     class       dictionary;
-    object      decomposeParDict;
+    location    "system";
+    object      meshQualityDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains  8;
+#includeEtc "caseDicts/mesh/generation/meshQualityDict.cfg"
 
-/*
-    Main methods are:
-    1) Geometric: "simple"; "hierarchical", with ordered sorting, e.g. xyz, yxz
-    2) Scotch: "scotch", when running in serial; "ptscotch", running in parallel
-*/
-
-method              scotch;
-
-simpleCoeffs
-{
-    n               (4 2 1); // total must match numberOfSubdomains
-}
-
-hierarchicalCoeffs
-{
-    n               (4 2 1); // total must match numberOfSubdomains
-    order           xyz;
-}
-
+//- minFaceWeight (0 -> 0.5)
+//minFaceWeight 0.02;
 
 // ************************************************************************* //

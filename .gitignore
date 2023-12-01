@@ -74,3 +74,6 @@ mesh.unv
 fluid.STEP
 *.unv
 fluid.geo
+.project
+/geometry/*
+/constant/polyMesh/sets/*
