@@ -8,14 +8,35 @@
 FoamFile
 {
     format      ascii;
-    class       dictionary;
-    location    "constant";
-    object      physicalProperties;
+    class       volScalarField;
+    object      alpha.water;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-viscosityModel  constant;
+dimensions      [0 0 0 0 0 0 0];
 
-nu              [0 2 -1 0 0 0 0] 5.93e-3; // Re_blockage = 200
+internalField   uniform 0;
+
+boundaryField
+{
+    wall
+    {
+        type            zeroGradient;
+    }
+
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 1;
+    }
+
+    outlet
+    {
+        type            inletOutlet;
+        value           $internalField;
+        inletValue      $internalField;
+    }
+
+}
 
 // ************************************************************************* //

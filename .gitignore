@@ -77,3 +77,4 @@ fluid.geo
 .project
 /geometry/*
 /constant/polyMesh/sets/*
+*/*.old

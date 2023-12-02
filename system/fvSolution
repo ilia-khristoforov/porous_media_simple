@@ -16,18 +16,51 @@ FoamFile
 
 solvers
 {
-    p
+    "alpha.electrolyte.*"
     {
-        solver          GAMG;
-        tolerance       1e-06;
-        relTol          0.1;
-        smoother        GaussSeidel;
+        nAlphaCorr      2;
+        nAlphaSubCycles 1;
+
+        MULESCorr       yes;
+        nLimiterIter    3;
+
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-8;
+        relTol          0;
     }
 
-    pFinal
+    "pcorr.*"
     {
-        $p;
-        tolerance       1e-06;
+        solver          PCG;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            tolerance       1e-5;
+            relTol          0;
+            smoother        GaussSeidel;
+        }
+        tolerance       1e-5;
+        relTol          0;
+        maxIter         50;
+    }
+
+    p_rgh
+    {
+        solver           GAMG;
+        tolerance        5e-9;
+        relTol           0.01;
+
+        smoother         GaussSeidel;
+
+
+
+        maxIter          50;
+    };
+
+    p_rghFinal
+    {
+        $p_rgh;
         relTol          0;
     }
 
@@ -50,14 +83,9 @@ PIMPLE
 
 relaxationFactors
 {
-    fields
-    {
-        p               0.3;
-    }
     equations
     {
-        U               0.7;
-        "(k|omega|epsilon).*" 0.7;
+        ".*"                1.1;
     }
 }
 

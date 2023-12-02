@@ -14,27 +14,22 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-4
+3
 (
-    background
-    {
-        type            internal;
-        inGroups        List<word> 1(internal);
-        nFaces          0;
-        startFace       3746961;
-    }
     inlet
     {
         type            patch;
         nFaces          446;
         startFace       3746961;
     }
+
     outlet
     {
         type            patch;
         nFaces          446;
         startFace       3747407;
     }
+
     wall
     {
         type            wall;
