@@ -22,9 +22,9 @@ backgroundMesh
     yMax            0.102;
     zMin            -0.003;
     zMax            0.003;
-    xCells          136;
-    yCells          120;
-    zCells          12;
+    xCells          200;
+    yCells          190;
+    zCells          20;
 }
 
 convertToMeters 1;
