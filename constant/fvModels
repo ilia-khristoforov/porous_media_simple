@@ -24,13 +24,13 @@ porosity
 
         type            DarcyForchheimer;
 
-        // D 100;  // Very little blockage
-        // D 200;  // Some blockage but steady flow
-        // D 500;  // Slight waviness in the far wake
-        D 1.37e9; // Fully shedding behavior
-	    cF 17792;
+
+        // D 15625000000; // K = 6.4E-11
+	D 1.06E10;//
+	// F 17792;
+	F 0; // No Forchheimer coef in the thesis 
         d   ($D $D $D);
-        f   ($cF $cF $cF);
+        f   ($F $F $F);
 
         coordinateSystem porousBlockage;
     }

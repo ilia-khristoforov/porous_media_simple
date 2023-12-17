@@ -77,3 +77,5 @@ fluid.geo
 .project
 /geometry/*
 /constant/polyMesh/sets/*
+res_10mlmin.zip
+res_100mlmin.zip

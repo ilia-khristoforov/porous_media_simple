@@ -1,10 +1,9 @@
-snappyHexMeshConfig -clearBoundary -insidePoint '(0.07 0.07 0.0027)' -inletRegions '(inlet)' -outletRegions '(outlet)'
+echo '###### BEGIN ######'
 
 blockMesh
-decomposePar
-
-mpirun -np 8 snappyHexMesh -parallel
-
-reconstructPar
 
 topoSet
+
+checkMesh
+
+echo '###### WE ARE SO READY ######'
