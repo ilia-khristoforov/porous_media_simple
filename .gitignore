@@ -79,3 +79,8 @@ fluid.geo
 /constant/polyMesh/sets/*
 Geometry by zones.png
 mesh closeup.png
+
+measurements
+constant/polyMesh/boundary
+system/blockMeshDict
+meshing.sh
