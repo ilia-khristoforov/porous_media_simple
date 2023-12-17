@@ -27,8 +27,8 @@ porosity
         // D 100;  // Very little blockage
         // D 200;  // Some blockage but steady flow
         // D 500;  // Slight waviness in the far wake
-        D 1.37e9; // Fully shedding behavior
-	    cF 17792;
+        D 2.21e9; // Fully shedding behavior
+	    cF 0;
         d   ($D $D $D);
         f   ($cF $cF $cF);
 

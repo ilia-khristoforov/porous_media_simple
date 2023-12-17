@@ -24,8 +24,9 @@ boundaryField
 
     inlet
     {
-        type            fixedValue;
-        value           uniform (0 0 0.23577);
+        type            flowRateInletVelocity;
+        volumetricFlowRate  1.667E-6; // m^3/s (-7 = 10ml/min, -6 = 100ml/min)
+        profile		laminarBL;
     }
 
     outlet
